@@ -608,3 +608,6 @@ endmodule
 <div align="center">
 <img src="Lab1_FIB_resources.jpg" />
 </div>
+
+## 实验总结
+本次实验中学习了算术逻辑单元和寄存器的设计与实现，并实现了三个与之相关的具体应用。
