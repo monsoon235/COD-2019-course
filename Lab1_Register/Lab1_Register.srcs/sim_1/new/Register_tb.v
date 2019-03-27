@@ -17,13 +17,6 @@ module Register_tb;
 		.out(out)
 		);
 
-	// initial begin
-	// 	clk=0;
-	// 	forever begin
-	// 		#1 clk=~clk;
-	// 	end
-	// end
-
 	integer i,last;
 
 	initial begin
@@ -55,7 +48,5 @@ module Register_tb;
 		$display("pass");
 		$finish;
 	end
-
-
 
 endmodule

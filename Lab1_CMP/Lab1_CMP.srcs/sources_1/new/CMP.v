@@ -32,15 +32,4 @@ module CMP #(WIDTH=6) (
 	assign sg = &{ ~sign, ~ZF };
 	assign sl = &{ sign, ~ZF };
 
-
-	// wire carry,sign_s,sign_u;
-	// assign carry = ~flags[0];   // = c[WIDTH-1]
-
-	// assign eq = flags[2] & ~carry;
-
-	// assign sign_u = ~carry;
-	// assign u = { ~sign_u & ~eq, sign_u };
-
-	// assign sign_s = ^{carry, x[WIDTH-1], ~y[WIDTH-1]};
-	// assign s = { ~sign_s & ~eq, sign_s };
 endmodule
