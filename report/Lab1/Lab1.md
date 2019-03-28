@@ -1,15 +1,23 @@
 # Lab1 运算器和寄存器
+
 ## 1.算术逻辑单元
+
 ### 逻辑设计
+
 ALU 包括加减运算和 AND, OR, NOT, XOR 四种逻辑操通过作，通过 sel 信号选择运算种类，输出结果和 ZF, CF,OF 三种标志符。
-对于逻辑运算，直接使用 Verilog 自带的逻辑运算符。\
+
+对于逻辑运算，直接使用 Verilog 自带的逻辑运算符。
+
 电路图如下：
+
 <div align="center">
 <img src="Lab1_ALU_design.jpg" />
 </div>
 
 ### 核心代码
+
 对于加减运算，实现一个**可设置位宽参数**的**超前进位加法器**，代码如下：
+
 ```
 module CLA_Adder #(WIDTH=32) (
 	input [WIDTH-1:0] a,
@@ -49,8 +57,11 @@ module CLA_Adder #(WIDTH=32) (
 	
 endmodule
 ```
+
 减法则使用加补码的方式实现。
+
 ALU 整体实现代码如下：
+
 ```
 module ALU #(WIDTH=6) (
     input [2:0] sel,
@@ -99,8 +110,11 @@ module ALU #(WIDTH=6) (
 
 endmodule
 ```
+
 ### 仿真
+
 仿真代码如下：
+
 ```
 `timescale 1ns / 1ps
 
@@ -190,12 +204,15 @@ module ALU_tb;
 	
 endmodule
 ```
+
 仿真过程不仅产生波形图，也自动对正确性进行了检验，通过测试则会显示 **pass**, 如下图：
+
 <div align="center">
 <img src="Lab1_ALU_tb_result.jpg" />
 </div>
 
 波形图如下：
+
 <div align="center">
 <img src="Lab1_ALU_tb_wave.jpg" />
 </div>
@@ -203,11 +220,13 @@ endmodule
 ### 结果分析
 
 下载展示：
+
 <div align="center">
 <img src="Lab1_ALU_flash.jpg" />
 </div>
 
 本设计使用的硬件资源和功耗如下：
+
 <div align="center">
 <img src="Lab1_ALU_resources.jpg" />
 </div>
@@ -215,14 +234,19 @@ endmodule
 ALU 是处理器的关键部分，加法器的速度直接影响了其运算延迟。采用超前进位加法器可以大幅改善其速度。但单纯的超前进位加法器在位宽较高时占用资源过大，并且有显著的扇入扇出效应，反而会限制时序电路的运行频率。因此可采用选择进位加法器配合超前进位达到资源和速度的平衡。受限于实验中**可自由指定位宽**的限制，本实现没有使用选择进位的技术。
 
 ## 2.寄存器
+
 ### 逻辑设计
-寄存器被设计为带有使能控制和异步重置功能的上升沿触发的触发器。\
+
+寄存器被设计为带有使能控制和异步重置功能的上升沿触发的触发器。
+
 电路图如下：
+
 <div align="center">
 <img src="Lab1_Register_design.jpg" />
 </div>
 
 ### 核心代码
+
 ```
 module Register #(WIDTH=6) (
     input clk,
@@ -242,8 +266,11 @@ module Register #(WIDTH=6) (
     end
 endmodule
 ```
+
 ### 仿真
+
 仿真代码如下：
+
 ```
 `timescale 1ns / 1ps
 
@@ -298,11 +325,13 @@ endmodule
 ```
 
 仿真同时给出结果判定和波形图：
+
 <div align="center">
 <img src="Lab1_Register_tb_result.jpg" />
 </div>
 
 波形图如下：
+
 <div align="center">
 <img src="Lab1_Register_tb_wave.jpg" />
 </div>
@@ -310,24 +339,31 @@ endmodule
 ### 结果分析
 
 下载展示：
+
 <div align="center">
 <img src="Lab1_Register_flash.jpg" />
 </div>
 
 本设计使用的硬件资源和功耗如下：
+
 <div align="center">
 <img src="Lab1_Register_resources.jpg" />
 </div>
 
 ## 3.a 比较器
+
 ### 逻辑设计
-使用 ALU 的减法功能，并对产生的 ZF, CF, OF 等标志位进行组合逻辑即可得出结果。\
+
+使用 ALU 的减法功能，并对产生的 ZF, CF, OF 等标志位进行组合逻辑即可得出结果。
+
 电路设计如下：
+
 <div align="center">
 <img src="Lab1_CMP_design.jpg" />
 </div>
 
 ### 核心代码
+
 ```
 module CMP #(WIDTH=6) (
     input [WIDTH-1:0] x,
@@ -363,7 +399,9 @@ endmodule
 ```
 
 ### 仿真
+
 仿真代码如下：
+
 ```
 `timescale 1ns / 1ps
 
@@ -407,35 +445,45 @@ endmodule
 ```
 
 结果如下：
+
 <div align="center">
 <img src="Lab1_CMP_tb_result.jpg" />
 </div>
 
 波形图如下：
+
 <div align="center">
 <img src="Lab1_CMP_tb_wave.jpg" />
 </div>
 
 ### 结果分析
+
 下载展示：
+
 <div align="center">
 <img src="Lab1_CMP_flash.jpg" />
 </div>
 
 本设计使用的硬件资源和功耗如下：
+
 <div align="center">
 <img src="Lab1_CMP_resources.jpg" />
 </div>
 
 ## 3.b 累加器
+
 ### 逻辑设计
-使用 ALU 的加法功能，配合寄存器，即可实现累加器。\
+
+使用 ALU 的加法功能，配合寄存器，即可实现累加器。
+
 电路设计如下：
+
 <div align="center">
 <img src="Lab1_ACM_design.jpg" />
 </div>
 
 ### 核心代码
+
 ```
 module ACM #(WIDTH=6) (
     input [WIDTH-1:0] x,
@@ -465,7 +513,9 @@ endmodule
 ```
 
 ### 仿真
+
 仿真代码如下：
+
 ```
 `timescale 1ns / 1ps
 
@@ -506,12 +556,15 @@ module ACM_tb;
 endmodule
 
 ```
+
 结果如下：
+
 <div align="center">
 <img src="Lab1_ACM_tb_result.jpg" />
 </div>
 
 波形图如下：
+
 <div align="center">
 <img src="Lab1_ACM_tb_wave.jpg" />
 </div>
@@ -519,24 +572,31 @@ endmodule
 ### 结果分析
 
 下载展示：
+
 <div align="center">
 <img src="Lab1_ACM_flash.jpg" />
 </div>
 
 本设计使用的硬件资源和功耗如下：
+
 <div align="center">
 <img src="Lab1_ACM_resources.jpg" />
 </div>
 
 ## 3.c 斐波那契数列
+
 ### 逻辑设计
-使用 ALU 的加法功能，配合寄存器，即可实现斐波那契数列的计算。\
+
+使用 ALU 的加法功能，配合寄存器，即可实现斐波那契数列的计算。
+
 电路设计如下：
+
 <div align="center">
 <img src="Lab1_FIB_design.jpg" />
 </div>
 
 ### 核心代码
+
 ```
 module FIB #(WIDTH=6) (
     input clk,
@@ -565,7 +625,9 @@ endmodule
 ```
 
 ### 仿真
+
 仿真代码如下：
+
 ```
 `timescale 1ns / 1ps
 
@@ -593,6 +655,7 @@ endmodule
 ```
 
 波形图如下：
+
 <div align="center">
 <img src="Lab1_FIB_tb_wave.jpg" />
 </div>
@@ -600,14 +663,17 @@ endmodule
 ### 结果分析
 
 下载展示：
+
 <div align="center">
 <img src="Lab1_FIB_flash.jpg" />
 </div>
 
 本设计使用的硬件资源和功耗如下：
+
 <div align="center">
 <img src="Lab1_FIB_resources.jpg" />
 </div>
 
 ## 实验总结
+
 本次实验中学习了算术逻辑单元和寄存器的设计与实现，并实现了三个与之相关的具体应用。
