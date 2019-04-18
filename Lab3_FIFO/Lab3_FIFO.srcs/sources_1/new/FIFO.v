@@ -20,13 +20,13 @@ module FIFO #(parameter WIDTH=4) (
 
     wire clk_in;
 
-    // assign clk_in = clk;
+    assign clk_in = clk;
 
-    Debouncer debouncer(
-        .clk_in(clk),
-        .CLK100MHZ(CLK100MHZ),
-        .clk_out(clk_in)
-        );
+    // Debouncer debouncer(
+    //     .clk_in(clk),
+    //     .CLK100MHZ(CLK100MHZ),
+    //     .clk_out(clk_in)
+    //     );
 
     reg [2:0] front,rear;
 

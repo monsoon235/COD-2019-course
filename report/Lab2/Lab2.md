@@ -96,7 +96,7 @@ module SRT #(WIDTH=3) (
             endcase
 
         end
-        
+
     end
 
 endmodule
