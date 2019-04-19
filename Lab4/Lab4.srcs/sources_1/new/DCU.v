@@ -9,10 +9,9 @@ module DCU(
     output [16:0] vaddr,
     output [11:0] vrgb,
     output hs,
-    output vs
+    output vs,
+    output CLK40MHZ
     );
-
-	wire CLK40MHZ;
 
 	clk_100MHZ_to_40MHZ clk_cvt(
 		.CLK100MHZ(CLK100MHZ),
@@ -68,6 +67,6 @@ module DCU(
 
 	assign vrgb = de ? ( on_cross ? ~vdata : vdata ) : 0;
 
-	assign vaddr = {col[7:0],raw[7:0]};
+	assign vaddr = {col[7:0]+1,raw[7:0]};
 
 endmodule

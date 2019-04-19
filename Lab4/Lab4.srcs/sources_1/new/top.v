@@ -17,6 +17,7 @@ module top(
 	
 	wire [15:0] vaddr,paddr;
 	wire [11:0] vdata,pdata;
+	wire CLK40MHZ;
 
 	// 显示模块
 	DCU dcu(
@@ -28,19 +29,31 @@ module top(
 		.vaddr(vaddr),
 		.vrgb({VGA_R,VGA_G,VGA_B}),
 		.hs(VGA_HS),
-		.vs(VGA_VS)
+		.vs(VGA_VS),
+		.CLK40MHZ(CLK40MHZ)
 		);
 
 	wire w_clk;
 	wire we;
 
-	VRAM vram(
-		.a(paddr),
-		.d(pdata),
-		.dpra(vaddr),
-		.clk(w_clk),
-		.we(we),
-		.dpo(vdata)
+	// VRAM vram(
+	// 	.a(paddr),
+	// 	.d(pdata),
+	// 	.dpra(vaddr),
+	// 	.clk(w_clk),
+	// 	.we(we),
+	// 	.dpo(vdata)
+	// 	// .qdpo_clk(CLK40MHZ)
+	// 	);
+
+	VRAM2 vram(
+		.addra(paddr),
+		.clka(w_clk),
+		.dina(pdata),
+		.wea(we),
+		.addrb(vaddr),
+		.clkb(CLK40MHZ),
+		.doutb(vdata)
 		);
 
 	PCU pcu(
