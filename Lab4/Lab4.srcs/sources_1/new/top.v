@@ -46,7 +46,7 @@ module top(
 	// 	// .qdpo_clk(CLK40MHZ)
 	// 	);
 
-	VRAM2 vram(
+	VRAM vram(
 		.addra(paddr),
 		.clka(w_clk),
 		.dina(pdata),

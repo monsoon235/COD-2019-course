@@ -46,20 +46,21 @@
 -- 
 -- DO NOT MODIFY THIS FILE.
 
--- IP VLNV: xilinx.com:ip:dist_mem_gen:8.0
--- IP Revision: 12
+-- IP VLNV: xilinx.com:ip:blk_mem_gen:8.4
+-- IP Revision: 1
 
 -- The following code must appear in the VHDL architecture header.
 
 ------------- Begin Cut here for COMPONENT Declaration ------ COMP_TAG
 COMPONENT VRAM
   PORT (
-    a : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
-    d : IN STD_LOGIC_VECTOR(11 DOWNTO 0);
-    dpra : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
-    clk : IN STD_LOGIC;
-    we : IN STD_LOGIC;
-    dpo : OUT STD_LOGIC_VECTOR(11 DOWNTO 0)
+    clka : IN STD_LOGIC;
+    wea : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
+    addra : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
+    dina : IN STD_LOGIC_VECTOR(11 DOWNTO 0);
+    clkb : IN STD_LOGIC;
+    addrb : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
+    doutb : OUT STD_LOGIC_VECTOR(11 DOWNTO 0)
   );
 END COMPONENT;
 -- COMP_TAG_END ------ End COMPONENT Declaration ------------
@@ -70,12 +71,13 @@ END COMPONENT;
 ------------- Begin Cut here for INSTANTIATION Template ----- INST_TAG
 your_instance_name : VRAM
   PORT MAP (
-    a => a,
-    d => d,
-    dpra => dpra,
-    clk => clk,
-    we => we,
-    dpo => dpo
+    clka => clka,
+    wea => wea,
+    addra => addra,
+    dina => dina,
+    clkb => clkb,
+    addrb => addrb,
+    doutb => doutb
   );
 -- INST_TAG_END ------ End INSTANTIATION Template ---------
 
