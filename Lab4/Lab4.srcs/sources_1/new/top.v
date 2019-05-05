@@ -36,16 +36,6 @@ module top(
 	wire w_clk;
 	wire we;
 
-	// VRAM vram(
-	// 	.a(paddr),
-	// 	.d(pdata),
-	// 	.dpra(vaddr),
-	// 	.clk(w_clk),
-	// 	.we(we),
-	// 	.dpo(vdata)
-	// 	// .qdpo_clk(CLK40MHZ)
-	// 	);
-
 	VRAM vram(
 		.addra(paddr),
 		.clka(w_clk),
