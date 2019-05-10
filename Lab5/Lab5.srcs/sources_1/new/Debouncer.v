@@ -6,32 +6,30 @@ module Debouncer(
     output reg out
     );
 	
-	reg [2:0] state;
-
+	reg state;
 	reg [31:0] cnt;
 
-	parameter waiting=0,counting=1;
+	parameter waiting=0, counting=1;
 
 	always @(posedge CLK100MHZ) begin
 		case (state)
 			waiting: begin
 				if (in!=out) begin
-					state=counting;
-					cnt=0;
+					state <= counting;
+					cnt <= 0;
 				end
 			end
 			counting: begin
-				if (cnt==5000000) begin
+				if (cnt==10_000_000) begin
 					if (in!=out) begin
-						out=in;
+						out <= in;
 					end
-					state=waiting;
+					state <= waiting;
 				end
 				else begin
-					cnt=cnt+1;
+					cnt <= cnt + 1;
 				end
 			end
-
 		endcase
 	end
 
