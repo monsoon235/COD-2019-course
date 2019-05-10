@@ -27,7 +27,7 @@ module Control (
 	output reg [2:0] ALUSrcB,
 	output reg [3:0] ALUOp,
 	output ALUOutWrite,
-	output NZPWrite,
+	// output NZPWrite,
 
 	// DDU
 	output DDU_in_IF
@@ -279,7 +279,7 @@ module Control (
 	end
 
 	assign ALUOutWrite = |{state==R_R, state==R_I, state==LW_SW};
-	assign NZPWrite = state==B || state==BZ;
+	// assign NZPWrite = state==B || state==BZ;
 
 	// ALU op 码
 	parameter

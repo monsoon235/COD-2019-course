@@ -10,9 +10,6 @@ module CPU_tb;
 	end
 
 	wire [31:0] PC;
-	 // DDU_mem_addr, DDU_mem_data, DDU_reg_data;
-	// wire [4:0] DDU_reg_addr;
-	// wire DDU_in_IF;
 
 	integer i;
 	initial begin
@@ -46,12 +43,6 @@ module CPU_tb;
 		mem[24]='h20170005;
 		mem[25]='h20000001;
 		rst=1; #1 rst=0;
-	end
-
-	always @(posedge clk) begin
-		if(PC==27*4) begin
-			$finish;
-		end
 	end
 
 	wire [31:0] mem_addr, mem_wd, mem_rd;

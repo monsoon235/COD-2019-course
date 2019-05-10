@@ -17,7 +17,7 @@ module CPU(
     );
 
 	reg [31:0] IR, MDR, ALUOut;
-	reg [2:0] nzp;
+	wire [2:0] nzp;
 
 	wire [1:0] PCSrc;
 	wire PCWrite;
@@ -61,7 +61,7 @@ module CPU(
 	wire [1:0] ALUSrcA;
 	wire [2:0] ALUSrcB;
 	wire [3:0] ALUOp;
-	wire ALUOutWrite, NZPWrite;
+	wire ALUOutWrite;
 
 	Control control(
 		.clk(clk),
@@ -86,7 +86,7 @@ module CPU(
 		.ALUSrcB(ALUSrcB),
 		.ALUOp(ALUOp),
 		.ALUOutWrite(ALUOutWrite),
-		.NZPWrite(NZPWrite),
+		// .NZPWrite(NZPWrite),
 
 		.DDU_in_IF(DDU_in_IF)
 		);
@@ -168,18 +168,18 @@ module CPU(
 		endcase
 	end
 
-	wire [2:0] nzp_out;
+	// wire [2:0] nzp_out;
 	wire [31:0] S;
 
 	always @(posedge clk or posedge rst) begin
 		if(rst) begin
 			ALUOut <= 0;
-			nzp <= 0;
+			// nzp <= 0;
 		end
 		else begin
-			if(NZPWrite) begin
-				nzp <= nzp_out;
-			end
+			// if(NZPWrite) begin
+			// 	nzp <= nzp_out;
+			// end
 			if(ALUOutWrite) begin
 				ALUOut <= S;
 			end
@@ -191,6 +191,6 @@ module CPU(
 		.B(B),
 		.S(S),
 		.op(ALUOp),
-		.nzp(nzp_out)
+		.nzp(nzp)
 		);
 endmodule
