@@ -1,0 +1,2 @@
+Font_ROM.v,verilog,xil_defaultlib,../../../../Lab6.srcs/sources_1/ip/Font_ROM_2/sim/Font_ROM.v,
+glbl.v,Verilog,xil_defaultlib,glbl.v

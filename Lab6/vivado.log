@@ -1,0 +1,929 @@
+#-----------------------------------------------------------
+# Vivado v2018.2 (64-bit)
+# SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
+# IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+# Start of session at: Fri May 31 01:42:11 2019
+# Process ID: 11512
+# Current directory: D:/Codes/COD-course/Lab6
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent8736 D:\Codes\COD-course\Lab6\Lab6.xpr
+# Log file: D:/Codes/COD-course/Lab6/vivado.log
+# Journal file: D:/Codes/COD-course/Lab6\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project D:/Codes/COD-course/Lab6/Lab6.xpr
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/Xilinx/Vivado/2018.2/data/ip'.
+open_project: Time (s): cpu = 00:00:11 ; elapsed = 00:00:07 . Memory (MB): peak = 789.242 ; gain = 61.188
+update_compile_order -fileset sources_1
+set_property -dict [list CONFIG.coefficient_file {C:/Users/yjh10/Desktop/terminal.coe}] [get_ips RAM]
+generate_target all [get_files  D:/Codes/COD-course/Lab6/Lab6.srcs/sources_1/ip/RAM/RAM.xci]
+INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'RAM'...
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'RAM'...
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'RAM'...
+INFO: [IP_Flow 19-1686] Generating 'Change Log' target for IP 'RAM'...
+catch { config_ip_cache -export [get_ips -all RAM] }
+export_ip_user_files -of_objects [get_files D:/Codes/COD-course/Lab6/Lab6.srcs/sources_1/ip/RAM/RAM.xci] -no_script -sync -force -quiet
+reset_run RAM_synth_1
+WARNING: [Vivado 12-1017] Problems encountered:
+1. Failed to delete one or more files in run directory D:/Codes/COD-course/Lab6/Lab6.runs/RAM_synth_1
+
+launch_runs -jobs 8 RAM_synth_1
+[Fri May 31 10:30:39 2019] Launched RAM_synth_1...
+Run output will be captured here: D:/Codes/COD-course/Lab6/Lab6.runs/RAM_synth_1/runme.log
+export_simulation -of_objects [get_files D:/Codes/COD-course/Lab6/Lab6.srcs/sources_1/ip/RAM/RAM.xci] -directory D:/Codes/COD-course/Lab6/Lab6.ip_user_files/sim_scripts -ip_user_files_dir D:/Codes/COD-course/Lab6/Lab6.ip_user_files -ipstatic_source_dir D:/Codes/COD-course/Lab6/Lab6.ip_user_files/ipstatic -lib_map_path [list {modelsim=D:/Codes/COD-course/Lab6/Lab6.cache/compile_simlib/modelsim} {questa=D:/Codes/COD-course/Lab6/Lab6.cache/compile_simlib/questa} {riviera=D:/Codes/COD-course/Lab6/Lab6.cache/compile_simlib/riviera} {activehdl=D:/Codes/COD-course/Lab6/Lab6.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+INFO: [Vivado 12-4149] The synthesis checkpoint for IP 'D:/Codes/COD-course/Lab6/Lab6.srcs/sources_1/ip/Font_ROM/Font_ROM.xci' is already up-to-date
+[Fri May 31 10:30:53 2019] Launched RAM_synth_1, synth_1...
+Run output will be captured here:
+RAM_synth_1: D:/Codes/COD-course/Lab6/Lab6.runs/RAM_synth_1/runme.log
+synth_1: D:/Codes/COD-course/Lab6/Lab6.runs/synth_1/runme.log
+[Fri May 31 10:30:53 2019] Launched impl_1...
+Run output will be captured here: D:/Codes/COD-course/Lab6/Lab6.runs/impl_1/runme.log
+open_hw
+close_hw
+open_hw
+connect_hw_server
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-2222] Launching hw_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+****** Xilinx hw_server v2018.2
+  **** Build date : Jun 14 2018-20:42:52
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+
+connect_hw_server: Time (s): cpu = 00:00:01 ; elapsed = 00:00:08 . Memory (MB): peak = 869.578 ; gain = 2.469
+open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210292A8B50FA
+set_property PROGRAM.FILE {D:/Codes/COD-course/Lab6/Lab6.runs/impl_1/top.bit} [get_hw_devices xc7a100t_0]
+current_hw_device [get_hw_devices xc7a100t_0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a100t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a100t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [Labtools 27-3361] The debug hub core was not detected.
+Resolution: 
+1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active.
+2. Make sure the BSCAN_SWITCH_USER_MASK device property in Vivado Hardware Manager reflects the user scan chain setting in the design and refresh the device.  To determine the user scan chain setting in the design, open the implemented design and use 'get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub]'.
+For more details on setting the scan chain property, consult the Vivado Debug and Programming User Guide (UG908).
+set_property PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property PROGRAM.FILE {D:/Codes/COD-course/Lab6/Lab6.runs/impl_1/top.bit} [get_hw_devices xc7a100t_0]
+program_hw_devices [get_hw_devices xc7a100t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a100t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a100t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [Labtools 27-3361] The debug hub core was not detected.
+Resolution: 
+1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active.
+2. Make sure the BSCAN_SWITCH_USER_MASK device property in Vivado Hardware Manager reflects the user scan chain setting in the design and refresh the device.  To determine the user scan chain setting in the design, open the implemented design and use 'get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub]'.
+For more details on setting the scan chain property, consult the Vivado Debug and Programming User Guide (UG908).
+close_hw
+set_property -dict [list CONFIG.coefficient_file {C:/Users/yjh10/Desktop/terminal.coe}] [get_ips RAM]
+generate_target all [get_files  D:/Codes/COD-course/Lab6/Lab6.srcs/sources_1/ip/RAM/RAM.xci]
+INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'RAM'...
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'RAM'...
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'RAM'...
+INFO: [IP_Flow 19-1686] Generating 'Change Log' target for IP 'RAM'...
+catch { config_ip_cache -export [get_ips -all RAM] }
+export_ip_user_files -of_objects [get_files D:/Codes/COD-course/Lab6/Lab6.srcs/sources_1/ip/RAM/RAM.xci] -no_script -sync -force -quiet
+reset_run RAM_synth_1
+WARNING: [Vivado 12-1017] Problems encountered:
+1. Failed to delete one or more files in run directory D:/Codes/COD-course/Lab6/Lab6.runs/RAM_synth_1
+
+launch_runs -jobs 8 RAM_synth_1
+[Fri May 31 10:57:15 2019] Launched RAM_synth_1...
+Run output will be captured here: D:/Codes/COD-course/Lab6/Lab6.runs/RAM_synth_1/runme.log
+export_simulation -of_objects [get_files D:/Codes/COD-course/Lab6/Lab6.srcs/sources_1/ip/RAM/RAM.xci] -directory D:/Codes/COD-course/Lab6/Lab6.ip_user_files/sim_scripts -ip_user_files_dir D:/Codes/COD-course/Lab6/Lab6.ip_user_files -ipstatic_source_dir D:/Codes/COD-course/Lab6/Lab6.ip_user_files/ipstatic -lib_map_path [list {modelsim=D:/Codes/COD-course/Lab6/Lab6.cache/compile_simlib/modelsim} {questa=D:/Codes/COD-course/Lab6/Lab6.cache/compile_simlib/questa} {riviera=D:/Codes/COD-course/Lab6/Lab6.cache/compile_simlib/riviera} {activehdl=D:/Codes/COD-course/Lab6/Lab6.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
+reset_run synth_1
+WARNING: [Vivado 12-1017] Problems encountered:
+1. Failed to delete one or more files in run directory D:/Codes/COD-course/Lab6/Lab6.runs/synth_1
+
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+INFO: [Vivado 12-4149] The synthesis checkpoint for IP 'D:/Codes/COD-course/Lab6/Lab6.srcs/sources_1/ip/Font_ROM/Font_ROM.xci' is already up-to-date
+[Fri May 31 10:57:26 2019] Launched RAM_synth_1, synth_1...
+Run output will be captured here:
+RAM_synth_1: D:/Codes/COD-course/Lab6/Lab6.runs/RAM_synth_1/runme.log
+synth_1: D:/Codes/COD-course/Lab6/Lab6.runs/synth_1/runme.log
+[Fri May 31 10:57:26 2019] Launched impl_1...
+Run output will be captured here: D:/Codes/COD-course/Lab6/Lab6.runs/impl_1/runme.log
+open_hw
+connect_hw_server
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-2222] Launching hw_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+****** Xilinx hw_server v2018.2
+  **** Build date : Jun 14 2018-20:42:52
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+
+connect_hw_server: Time (s): cpu = 00:00:01 ; elapsed = 00:00:05 . Memory (MB): peak = 1556.602 ; gain = 0.000
+open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210292A8B50FA
+set_property PROGRAM.FILE {D:/Codes/COD-course/Lab6/Lab6.runs/impl_1/top.bit} [get_hw_devices xc7a100t_0]
+current_hw_device [get_hw_devices xc7a100t_0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a100t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a100t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [Labtools 27-3361] The debug hub core was not detected.
+Resolution: 
+1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active.
+2. Make sure the BSCAN_SWITCH_USER_MASK device property in Vivado Hardware Manager reflects the user scan chain setting in the design and refresh the device.  To determine the user scan chain setting in the design, open the implemented design and use 'get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub]'.
+For more details on setting the scan chain property, consult the Vivado Debug and Programming User Guide (UG908).
+set_property PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property PROGRAM.FILE {D:/Codes/COD-course/Lab6/Lab6.runs/impl_1/top.bit} [get_hw_devices xc7a100t_0]
+program_hw_devices [get_hw_devices xc7a100t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a100t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a100t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [Labtools 27-3361] The debug hub core was not detected.
+Resolution: 
+1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active.
+2. Make sure the BSCAN_SWITCH_USER_MASK device property in Vivado Hardware Manager reflects the user scan chain setting in the design and refresh the device.  To determine the user scan chain setting in the design, open the implemented design and use 'get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub]'.
+For more details on setting the scan chain property, consult the Vivado Debug and Programming User Guide (UG908).
+ERROR: [Labtoolstcl 44-513] HW Target shutdown. Closing target: localhost:3121/xilinx_tcf/Digilent/210292A8B50FA
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210292A8B50FA
+INFO: [Labtools 27-1434] Device xc7a100t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [Labtools 27-3361] The debug hub core was not detected.
+Resolution: 
+1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active.
+2. Make sure the BSCAN_SWITCH_USER_MASK device property in Vivado Hardware Manager reflects the user scan chain setting in the design and refresh the device.  To determine the user scan chain setting in the design, open the implemented design and use 'get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub]'.
+For more details on setting the scan chain property, consult the Vivado Debug and Programming User Guide (UG908).
+WARNING: [Labtoolstcl 44-129] No matching hw_ila_data was found.
+set_property PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property PROGRAM.FILE {D:/Codes/COD-course/Lab6/Lab6.runs/impl_1/top.bit} [get_hw_devices xc7a100t_0]
+program_hw_devices [get_hw_devices xc7a100t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a100t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a100t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [Labtools 27-3361] The debug hub core was not detected.
+Resolution: 
+1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active.
+2. Make sure the BSCAN_SWITCH_USER_MASK device property in Vivado Hardware Manager reflects the user scan chain setting in the design and refresh the device.  To determine the user scan chain setting in the design, open the implemented design and use 'get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub]'.
+For more details on setting the scan chain property, consult the Vivado Debug and Programming User Guide (UG908).
+close_hw
+set_property -dict [list CONFIG.coefficient_file {C:/Users/yjh10/Desktop/font.coe}] [get_ips Font_ROM]
+generate_target all [get_files  D:/Codes/COD-course/Lab6/Lab6.srcs/sources_1/ip/Font_ROM/Font_ROM.xci]
+INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'Font_ROM'...
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'Font_ROM'...
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'Font_ROM'...
+INFO: [IP_Flow 19-1686] Generating 'Change Log' target for IP 'Font_ROM'...
+catch { config_ip_cache -export [get_ips -all Font_ROM] }
+export_ip_user_files -of_objects [get_files D:/Codes/COD-course/Lab6/Lab6.srcs/sources_1/ip/Font_ROM/Font_ROM.xci] -no_script -sync -force -quiet
+create_ip_run [get_files -of_objects [get_fileset sources_1] D:/Codes/COD-course/Lab6/Lab6.srcs/sources_1/ip/Font_ROM/Font_ROM.xci]
+launch_runs -jobs 8 Font_ROM_synth_1
+[Fri May 31 12:48:32 2019] Launched Font_ROM_synth_1...
+Run output will be captured here: D:/Codes/COD-course/Lab6/Lab6.runs/Font_ROM_synth_1/runme.log
+export_simulation -of_objects [get_files D:/Codes/COD-course/Lab6/Lab6.srcs/sources_1/ip/Font_ROM/Font_ROM.xci] -directory D:/Codes/COD-course/Lab6/Lab6.ip_user_files/sim_scripts -ip_user_files_dir D:/Codes/COD-course/Lab6/Lab6.ip_user_files -ipstatic_source_dir D:/Codes/COD-course/Lab6/Lab6.ip_user_files/ipstatic -lib_map_path [list {modelsim=D:/Codes/COD-course/Lab6/Lab6.cache/compile_simlib/modelsim} {questa=D:/Codes/COD-course/Lab6/Lab6.cache/compile_simlib/questa} {riviera=D:/Codes/COD-course/Lab6/Lab6.cache/compile_simlib/riviera} {activehdl=D:/Codes/COD-course/Lab6/Lab6.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
+set_property -dict [list CONFIG.coefficient_file {C:/Users/yjh10/Desktop/terminal.coe}] [get_ips RAM]
+generate_target all [get_files  D:/Codes/COD-course/Lab6/Lab6.srcs/sources_1/ip/RAM/RAM.xci]
+INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'RAM'...
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'RAM'...
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'RAM'...
+INFO: [IP_Flow 19-1686] Generating 'Change Log' target for IP 'RAM'...
+catch { config_ip_cache -export [get_ips -all RAM] }
+export_ip_user_files -of_objects [get_files D:/Codes/COD-course/Lab6/Lab6.srcs/sources_1/ip/RAM/RAM.xci] -no_script -sync -force -quiet
+reset_run RAM_synth_1
+WARNING: [Vivado 12-1017] Problems encountered:
+1. Failed to delete one or more files in run directory D:/Codes/COD-course/Lab6/Lab6.runs/RAM_synth_1
+
+launch_runs -jobs 8 RAM_synth_1
+[Fri May 31 12:49:14 2019] Launched RAM_synth_1...
+Run output will be captured here: D:/Codes/COD-course/Lab6/Lab6.runs/RAM_synth_1/runme.log
+export_simulation -of_objects [get_files D:/Codes/COD-course/Lab6/Lab6.srcs/sources_1/ip/RAM/RAM.xci] -directory D:/Codes/COD-course/Lab6/Lab6.ip_user_files/sim_scripts -ip_user_files_dir D:/Codes/COD-course/Lab6/Lab6.ip_user_files -ipstatic_source_dir D:/Codes/COD-course/Lab6/Lab6.ip_user_files/ipstatic -lib_map_path [list {modelsim=D:/Codes/COD-course/Lab6/Lab6.cache/compile_simlib/modelsim} {questa=D:/Codes/COD-course/Lab6/Lab6.cache/compile_simlib/questa} {riviera=D:/Codes/COD-course/Lab6/Lab6.cache/compile_simlib/riviera} {activehdl=D:/Codes/COD-course/Lab6/Lab6.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
+reset_run synth_1
+WARNING: [Vivado 12-1017] Problems encountered:
+1. Failed to delete one or more files in run directory D:/Codes/COD-course/Lab6/Lab6.runs/synth_1
+
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+[Fri May 31 12:49:23 2019] Launched RAM_synth_1, Font_ROM_synth_1, synth_1...
+Run output will be captured here:
+RAM_synth_1: D:/Codes/COD-course/Lab6/Lab6.runs/RAM_synth_1/runme.log
+Font_ROM_synth_1: D:/Codes/COD-course/Lab6/Lab6.runs/Font_ROM_synth_1/runme.log
+synth_1: D:/Codes/COD-course/Lab6/Lab6.runs/synth_1/runme.log
+[Fri May 31 12:49:23 2019] Launched impl_1...
+Run output will be captured here: D:/Codes/COD-course/Lab6/Lab6.runs/impl_1/runme.log
+reset_run synth_1
+set_property -dict [list CONFIG.coefficient_file {C:/Users/yjh10/Desktop/terminal.coe}] [get_ips RAM]
+generate_target all [get_files  D:/Codes/COD-course/Lab6/Lab6.srcs/sources_1/ip/RAM/RAM.xci]
+INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'RAM'...
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'RAM'...
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'RAM'...
+INFO: [IP_Flow 19-1686] Generating 'Change Log' target for IP 'RAM'...
+catch { config_ip_cache -export [get_ips -all RAM] }
+export_ip_user_files -of_objects [get_files D:/Codes/COD-course/Lab6/Lab6.srcs/sources_1/ip/RAM/RAM.xci] -no_script -sync -force -quiet
+reset_run RAM_synth_1
+WARNING: [Vivado 12-1017] Problems encountered:
+1. Failed to delete one or more files in run directory D:/Codes/COD-course/Lab6/Lab6.runs/RAM_synth_1
+
+launch_runs -jobs 8 RAM_synth_1
+[Fri May 31 12:51:57 2019] Launched RAM_synth_1...
+Run output will be captured here: D:/Codes/COD-course/Lab6/Lab6.runs/RAM_synth_1/runme.log
+export_simulation -of_objects [get_files D:/Codes/COD-course/Lab6/Lab6.srcs/sources_1/ip/RAM/RAM.xci] -directory D:/Codes/COD-course/Lab6/Lab6.ip_user_files/sim_scripts -ip_user_files_dir D:/Codes/COD-course/Lab6/Lab6.ip_user_files -ipstatic_source_dir D:/Codes/COD-course/Lab6/Lab6.ip_user_files/ipstatic -lib_map_path [list {modelsim=D:/Codes/COD-course/Lab6/Lab6.cache/compile_simlib/modelsim} {questa=D:/Codes/COD-course/Lab6/Lab6.cache/compile_simlib/questa} {riviera=D:/Codes/COD-course/Lab6/Lab6.cache/compile_simlib/riviera} {activehdl=D:/Codes/COD-course/Lab6/Lab6.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+[Fri May 31 12:52:08 2019] Launched RAM_synth_1, synth_1...
+Run output will be captured here:
+RAM_synth_1: D:/Codes/COD-course/Lab6/Lab6.runs/RAM_synth_1/runme.log
+synth_1: D:/Codes/COD-course/Lab6/Lab6.runs/synth_1/runme.log
+[Fri May 31 12:52:09 2019] Launched impl_1...
+Run output will be captured here: D:/Codes/COD-course/Lab6/Lab6.runs/impl_1/runme.log
+reset_run synth_1
+set_property -dict [list CONFIG.coefficient_file {C:/Users/yjh10/Desktop/terminal.coe}] [get_ips RAM]
+generate_target all [get_files  D:/Codes/COD-course/Lab6/Lab6.srcs/sources_1/ip/RAM/RAM.xci]
+INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'RAM'...
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'RAM'...
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'RAM'...
+INFO: [IP_Flow 19-1686] Generating 'Change Log' target for IP 'RAM'...
+catch { config_ip_cache -export [get_ips -all RAM] }
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP RAM, cache-ID = 3b7fff3a7edad094; cache size = 16.863 MB.
+catch { [ delete_ip_run [get_ips -all RAM] ] }
+WARNING: [Vivado 12-1017] Problems encountered:
+1. Failed to delete one or more files in run directory D:/Codes/COD-course/Lab6/Lab6.runs/RAM_synth_1
+
+INFO: [Project 1-386] Moving file 'D:/Codes/COD-course/Lab6/Lab6.srcs/sources_1/ip/RAM/RAM.xci' from fileset 'RAM' to fileset 'sources_1'.
+export_ip_user_files -of_objects [get_files D:/Codes/COD-course/Lab6/Lab6.srcs/sources_1/ip/RAM/RAM.xci] -no_script -sync -force -quiet
+create_ip_run [get_files -of_objects [get_fileset sources_1] D:/Codes/COD-course/Lab6/Lab6.srcs/sources_1/ip/RAM/RAM.xci]
+INFO: [Vivado 12-3453] The given sub-design is up-to-date, no action was taken.  If a run is still desired, use the '-force' option for the file:'D:/Codes/COD-course/Lab6/Lab6.srcs/sources_1/ip/RAM/RAM.xci'
+export_simulation -of_objects [get_files D:/Codes/COD-course/Lab6/Lab6.srcs/sources_1/ip/RAM/RAM.xci] -directory D:/Codes/COD-course/Lab6/Lab6.ip_user_files/sim_scripts -ip_user_files_dir D:/Codes/COD-course/Lab6/Lab6.ip_user_files -ipstatic_source_dir D:/Codes/COD-course/Lab6/Lab6.ip_user_files/ipstatic -lib_map_path [list {modelsim=D:/Codes/COD-course/Lab6/Lab6.cache/compile_simlib/modelsim} {questa=D:/Codes/COD-course/Lab6/Lab6.cache/compile_simlib/questa} {riviera=D:/Codes/COD-course/Lab6/Lab6.cache/compile_simlib/riviera} {activehdl=D:/Codes/COD-course/Lab6/Lab6.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
+update_compile_order -fileset sources_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+INFO: [Vivado 12-4149] The synthesis checkpoint for IP 'D:/Codes/COD-course/Lab6/Lab6.srcs/sources_1/ip/RAM/RAM.xci' is already up-to-date
+[Fri May 31 12:53:33 2019] Launched synth_1...
+Run output will be captured here: D:/Codes/COD-course/Lab6/Lab6.runs/synth_1/runme.log
+[Fri May 31 12:53:33 2019] Launched impl_1...
+Run output will be captured here: D:/Codes/COD-course/Lab6/Lab6.runs/impl_1/runme.log
+open_hw
+connect_hw_server
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-2222] Launching hw_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+****** Xilinx hw_server v2018.2
+  **** Build date : Jun 14 2018-20:42:52
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+
+open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210292A8B50FA
+set_property PROGRAM.FILE {D:/Codes/COD-course/Lab6/Lab6.runs/impl_1/top.bit} [get_hw_devices xc7a100t_0]
+current_hw_device [get_hw_devices xc7a100t_0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a100t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a100t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [Labtools 27-3361] The debug hub core was not detected.
+Resolution: 
+1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active.
+2. Make sure the BSCAN_SWITCH_USER_MASK device property in Vivado Hardware Manager reflects the user scan chain setting in the design and refresh the device.  To determine the user scan chain setting in the design, open the implemented design and use 'get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub]'.
+For more details on setting the scan chain property, consult the Vivado Debug and Programming User Guide (UG908).
+set_property PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property PROGRAM.FILE {D:/Codes/COD-course/Lab6/Lab6.runs/impl_1/top.bit} [get_hw_devices xc7a100t_0]
+program_hw_devices [get_hw_devices xc7a100t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a100t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a100t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [Labtools 27-3361] The debug hub core was not detected.
+Resolution: 
+1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active.
+2. Make sure the BSCAN_SWITCH_USER_MASK device property in Vivado Hardware Manager reflects the user scan chain setting in the design and refresh the device.  To determine the user scan chain setting in the design, open the implemented design and use 'get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub]'.
+For more details on setting the scan chain property, consult the Vivado Debug and Programming User Guide (UG908).
+close_hw
+set_property -dict [list CONFIG.coefficient_file {C:/Users/yjh10/Desktop/terminal.coe}] [get_ips RAM]
+generate_target all [get_files  D:/Codes/COD-course/Lab6/Lab6.srcs/sources_1/ip/RAM/RAM.xci]
+INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'RAM'...
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'RAM'...
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'RAM'...
+INFO: [IP_Flow 19-1686] Generating 'Change Log' target for IP 'RAM'...
+catch { config_ip_cache -export [get_ips -all RAM] }
+export_ip_user_files -of_objects [get_files D:/Codes/COD-course/Lab6/Lab6.srcs/sources_1/ip/RAM/RAM.xci] -no_script -sync -force -quiet
+create_ip_run [get_files -of_objects [get_fileset sources_1] D:/Codes/COD-course/Lab6/Lab6.srcs/sources_1/ip/RAM/RAM.xci]
+launch_runs -jobs 8 RAM_synth_1
+[Fri May 31 13:05:59 2019] Launched RAM_synth_1...
+Run output will be captured here: D:/Codes/COD-course/Lab6/Lab6.runs/RAM_synth_1/runme.log
+export_simulation -of_objects [get_files D:/Codes/COD-course/Lab6/Lab6.srcs/sources_1/ip/RAM/RAM.xci] -directory D:/Codes/COD-course/Lab6/Lab6.ip_user_files/sim_scripts -ip_user_files_dir D:/Codes/COD-course/Lab6/Lab6.ip_user_files -ipstatic_source_dir D:/Codes/COD-course/Lab6/Lab6.ip_user_files/ipstatic -lib_map_path [list {modelsim=D:/Codes/COD-course/Lab6/Lab6.cache/compile_simlib/modelsim} {questa=D:/Codes/COD-course/Lab6/Lab6.cache/compile_simlib/questa} {riviera=D:/Codes/COD-course/Lab6/Lab6.cache/compile_simlib/riviera} {activehdl=D:/Codes/COD-course/Lab6/Lab6.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
+reset_run synth_1
+WARNING: [Vivado 12-1017] Problems encountered:
+1. Failed to delete one or more files in run directory D:/Codes/COD-course/Lab6/Lab6.runs/synth_1
+
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+[Fri May 31 13:06:06 2019] Launched RAM_synth_1, synth_1...
+Run output will be captured here:
+RAM_synth_1: D:/Codes/COD-course/Lab6/Lab6.runs/RAM_synth_1/runme.log
+synth_1: D:/Codes/COD-course/Lab6/Lab6.runs/synth_1/runme.log
+[Fri May 31 13:06:06 2019] Launched impl_1...
+Run output will be captured here: D:/Codes/COD-course/Lab6/Lab6.runs/impl_1/runme.log
+open_hw
+connect_hw_server
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-2222] Launching hw_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+****** Xilinx hw_server v2018.2
+  **** Build date : Jun 14 2018-20:42:52
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+
+open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210292A8B50FA
+set_property PROGRAM.FILE {D:/Codes/COD-course/Lab6/Lab6.runs/impl_1/top.bit} [get_hw_devices xc7a100t_0]
+current_hw_device [get_hw_devices xc7a100t_0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a100t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a100t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [Labtools 27-3361] The debug hub core was not detected.
+Resolution: 
+1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active.
+2. Make sure the BSCAN_SWITCH_USER_MASK device property in Vivado Hardware Manager reflects the user scan chain setting in the design and refresh the device.  To determine the user scan chain setting in the design, open the implemented design and use 'get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub]'.
+For more details on setting the scan chain property, consult the Vivado Debug and Programming User Guide (UG908).
+set_property PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property PROGRAM.FILE {D:/Codes/COD-course/Lab6/Lab6.runs/impl_1/top.bit} [get_hw_devices xc7a100t_0]
+program_hw_devices [get_hw_devices xc7a100t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a100t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a100t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [Labtools 27-3361] The debug hub core was not detected.
+Resolution: 
+1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active.
+2. Make sure the BSCAN_SWITCH_USER_MASK device property in Vivado Hardware Manager reflects the user scan chain setting in the design and refresh the device.  To determine the user scan chain setting in the design, open the implemented design and use 'get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub]'.
+For more details on setting the scan chain property, consult the Vivado Debug and Programming User Guide (UG908).
+ERROR: [Labtoolstcl 44-513] HW Target shutdown. Closing target: localhost:3121/xilinx_tcf/Digilent/210292A8B50FA
+close_hw
+set_property -dict [list CONFIG.coefficient_file {C:/Users/yjh10/Desktop/test_new.coe}] [get_ips RAM]
+generate_target all [get_files  D:/Codes/COD-course/Lab6/Lab6.srcs/sources_1/ip/RAM/RAM.xci]
+INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'RAM'...
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'RAM'...
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'RAM'...
+INFO: [IP_Flow 19-1686] Generating 'Change Log' target for IP 'RAM'...
+catch { config_ip_cache -export [get_ips -all RAM] }
+export_ip_user_files -of_objects [get_files D:/Codes/COD-course/Lab6/Lab6.srcs/sources_1/ip/RAM/RAM.xci] -no_script -sync -force -quiet
+reset_run RAM_synth_1
+WARNING: [Vivado 12-1017] Problems encountered:
+1. Failed to delete one or more files in run directory D:/Codes/COD-course/Lab6/Lab6.runs/RAM_synth_1
+
+launch_runs -jobs 8 RAM_synth_1
+[Fri May 31 15:03:24 2019] Launched RAM_synth_1...
+Run output will be captured here: D:/Codes/COD-course/Lab6/Lab6.runs/RAM_synth_1/runme.log
+export_simulation -of_objects [get_files D:/Codes/COD-course/Lab6/Lab6.srcs/sources_1/ip/RAM/RAM.xci] -directory D:/Codes/COD-course/Lab6/Lab6.ip_user_files/sim_scripts -ip_user_files_dir D:/Codes/COD-course/Lab6/Lab6.ip_user_files -ipstatic_source_dir D:/Codes/COD-course/Lab6/Lab6.ip_user_files/ipstatic -lib_map_path [list {modelsim=D:/Codes/COD-course/Lab6/Lab6.cache/compile_simlib/modelsim} {questa=D:/Codes/COD-course/Lab6/Lab6.cache/compile_simlib/questa} {riviera=D:/Codes/COD-course/Lab6/Lab6.cache/compile_simlib/riviera} {activehdl=D:/Codes/COD-course/Lab6/Lab6.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
+reset_run synth_1
+WARNING: [Vivado 12-1017] Problems encountered:
+1. Failed to delete one or more files in run directory D:/Codes/COD-course/Lab6/Lab6.runs/synth_1
+
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+[Fri May 31 15:03:33 2019] Launched RAM_synth_1, synth_1...
+Run output will be captured here:
+RAM_synth_1: D:/Codes/COD-course/Lab6/Lab6.runs/RAM_synth_1/runme.log
+synth_1: D:/Codes/COD-course/Lab6/Lab6.runs/synth_1/runme.log
+[Fri May 31 15:03:33 2019] Launched impl_1...
+Run output will be captured here: D:/Codes/COD-course/Lab6/Lab6.runs/impl_1/runme.log
+open_hw
+connect_hw_server
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-2222] Launching hw_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+****** Xilinx hw_server v2018.2
+  **** Build date : Jun 14 2018-20:42:52
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+
+connect_hw_server: Time (s): cpu = 00:00:01 ; elapsed = 00:00:07 . Memory (MB): peak = 1730.496 ; gain = 0.000
+open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210292A8B50FA
+set_property PROGRAM.FILE {D:/Codes/COD-course/Lab6/Lab6.runs/impl_1/top.bit} [get_hw_devices xc7a100t_0]
+current_hw_device [get_hw_devices xc7a100t_0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a100t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a100t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [Labtools 27-3361] The debug hub core was not detected.
+Resolution: 
+1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active.
+2. Make sure the BSCAN_SWITCH_USER_MASK device property in Vivado Hardware Manager reflects the user scan chain setting in the design and refresh the device.  To determine the user scan chain setting in the design, open the implemented design and use 'get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub]'.
+For more details on setting the scan chain property, consult the Vivado Debug and Programming User Guide (UG908).
+set_property PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property PROGRAM.FILE {D:/Codes/COD-course/Lab6/Lab6.runs/impl_1/top.bit} [get_hw_devices xc7a100t_0]
+program_hw_devices [get_hw_devices xc7a100t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a100t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a100t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [Labtools 27-3361] The debug hub core was not detected.
+Resolution: 
+1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active.
+2. Make sure the BSCAN_SWITCH_USER_MASK device property in Vivado Hardware Manager reflects the user scan chain setting in the design and refresh the device.  To determine the user scan chain setting in the design, open the implemented design and use 'get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub]'.
+For more details on setting the scan chain property, consult the Vivado Debug and Programming User Guide (UG908).
+close_hw
+set_property -dict [list CONFIG.coefficient_file {C:/Users/yjh10/Desktop/terminal.coe}] [get_ips RAM]
+generate_target all [get_files  D:/Codes/COD-course/Lab6/Lab6.srcs/sources_1/ip/RAM/RAM.xci]
+INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'RAM'...
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'RAM'...
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'RAM'...
+INFO: [IP_Flow 19-1686] Generating 'Change Log' target for IP 'RAM'...
+catch { config_ip_cache -export [get_ips -all RAM] }
+export_ip_user_files -of_objects [get_files D:/Codes/COD-course/Lab6/Lab6.srcs/sources_1/ip/RAM/RAM.xci] -no_script -sync -force -quiet
+reset_run RAM_synth_1
+WARNING: [Vivado 12-1017] Problems encountered:
+1. Failed to delete one or more files in run directory D:/Codes/COD-course/Lab6/Lab6.runs/RAM_synth_1
+
+launch_runs -jobs 8 RAM_synth_1
+[Fri May 31 16:42:34 2019] Launched RAM_synth_1...
+Run output will be captured here: D:/Codes/COD-course/Lab6/Lab6.runs/RAM_synth_1/runme.log
+export_simulation -of_objects [get_files D:/Codes/COD-course/Lab6/Lab6.srcs/sources_1/ip/RAM/RAM.xci] -directory D:/Codes/COD-course/Lab6/Lab6.ip_user_files/sim_scripts -ip_user_files_dir D:/Codes/COD-course/Lab6/Lab6.ip_user_files -ipstatic_source_dir D:/Codes/COD-course/Lab6/Lab6.ip_user_files/ipstatic -lib_map_path [list {modelsim=D:/Codes/COD-course/Lab6/Lab6.cache/compile_simlib/modelsim} {questa=D:/Codes/COD-course/Lab6/Lab6.cache/compile_simlib/questa} {riviera=D:/Codes/COD-course/Lab6/Lab6.cache/compile_simlib/riviera} {activehdl=D:/Codes/COD-course/Lab6/Lab6.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
+set_property -dict [list CONFIG.coefficient_file {C:/Users/yjh10/Desktop/font.coe}] [get_ips Font_ROM]
+generate_target all [get_files  D:/Codes/COD-course/Lab6/Lab6.srcs/sources_1/ip/Font_ROM/Font_ROM.xci]
+INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'Font_ROM'...
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'Font_ROM'...
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'Font_ROM'...
+INFO: [IP_Flow 19-1686] Generating 'Change Log' target for IP 'Font_ROM'...
+catch { config_ip_cache -export [get_ips -all Font_ROM] }
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP Font_ROM, cache-ID = e125cf39ef94cc8b; cache size = 18.104 MB.
+catch { [ delete_ip_run [get_ips -all Font_ROM] ] }
+WARNING: [Vivado 12-1017] Problems encountered:
+1. Failed to delete one or more files in run directory D:/Codes/COD-course/Lab6/Lab6.runs/Font_ROM_synth_1
+
+INFO: [Project 1-386] Moving file 'D:/Codes/COD-course/Lab6/Lab6.srcs/sources_1/ip/Font_ROM/Font_ROM.xci' from fileset 'Font_ROM' to fileset 'sources_1'.
+export_ip_user_files -of_objects [get_files D:/Codes/COD-course/Lab6/Lab6.srcs/sources_1/ip/Font_ROM/Font_ROM.xci] -no_script -sync -force -quiet
+create_ip_run [get_files -of_objects [get_fileset sources_1] D:/Codes/COD-course/Lab6/Lab6.srcs/sources_1/ip/Font_ROM/Font_ROM.xci]
+INFO: [Vivado 12-3453] The given sub-design is up-to-date, no action was taken.  If a run is still desired, use the '-force' option for the file:'D:/Codes/COD-course/Lab6/Lab6.srcs/sources_1/ip/Font_ROM/Font_ROM.xci'
+export_simulation -of_objects [get_files D:/Codes/COD-course/Lab6/Lab6.srcs/sources_1/ip/Font_ROM/Font_ROM.xci] -directory D:/Codes/COD-course/Lab6/Lab6.ip_user_files/sim_scripts -ip_user_files_dir D:/Codes/COD-course/Lab6/Lab6.ip_user_files -ipstatic_source_dir D:/Codes/COD-course/Lab6/Lab6.ip_user_files/ipstatic -lib_map_path [list {modelsim=D:/Codes/COD-course/Lab6/Lab6.cache/compile_simlib/modelsim} {questa=D:/Codes/COD-course/Lab6/Lab6.cache/compile_simlib/questa} {riviera=D:/Codes/COD-course/Lab6/Lab6.cache/compile_simlib/riviera} {activehdl=D:/Codes/COD-course/Lab6/Lab6.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+INFO: [Vivado 12-4149] The synthesis checkpoint for IP 'D:/Codes/COD-course/Lab6/Lab6.srcs/sources_1/ip/Font_ROM/Font_ROM.xci' is already up-to-date
+[Fri May 31 16:43:31 2019] Launched synth_1...
+Run output will be captured here: D:/Codes/COD-course/Lab6/Lab6.runs/synth_1/runme.log
+[Fri May 31 16:43:31 2019] Launched impl_1...
+Run output will be captured here: D:/Codes/COD-course/Lab6/Lab6.runs/impl_1/runme.log
+open_hw
+connect_hw_server
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-2222] Launching hw_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+****** Xilinx hw_server v2018.2
+  **** Build date : Jun 14 2018-20:42:52
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+
+close_hw
+set_property -dict [list CONFIG.coefficient_file {C:/Users/yjh10/Desktop/font.coe}] [get_ips Font_ROM]
+generate_target all [get_files  D:/Codes/COD-course/Lab6/Lab6.srcs/sources_1/ip/Font_ROM/Font_ROM.xci]
+INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'Font_ROM'...
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'Font_ROM'...
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'Font_ROM'...
+INFO: [IP_Flow 19-1686] Generating 'Change Log' target for IP 'Font_ROM'...
+catch { config_ip_cache -export [get_ips -all Font_ROM] }
+export_ip_user_files -of_objects [get_files D:/Codes/COD-course/Lab6/Lab6.srcs/sources_1/ip/Font_ROM/Font_ROM.xci] -no_script -sync -force -quiet
+create_ip_run [get_files -of_objects [get_fileset sources_1] D:/Codes/COD-course/Lab6/Lab6.srcs/sources_1/ip/Font_ROM/Font_ROM.xci]
+launch_runs -jobs 8 Font_ROM_synth_1
+[Fri May 31 17:12:56 2019] Launched Font_ROM_synth_1...
+Run output will be captured here: D:/Codes/COD-course/Lab6/Lab6.runs/Font_ROM_synth_1/runme.log
+export_simulation -of_objects [get_files D:/Codes/COD-course/Lab6/Lab6.srcs/sources_1/ip/Font_ROM/Font_ROM.xci] -directory D:/Codes/COD-course/Lab6/Lab6.ip_user_files/sim_scripts -ip_user_files_dir D:/Codes/COD-course/Lab6/Lab6.ip_user_files -ipstatic_source_dir D:/Codes/COD-course/Lab6/Lab6.ip_user_files/ipstatic -lib_map_path [list {modelsim=D:/Codes/COD-course/Lab6/Lab6.cache/compile_simlib/modelsim} {questa=D:/Codes/COD-course/Lab6/Lab6.cache/compile_simlib/questa} {riviera=D:/Codes/COD-course/Lab6/Lab6.cache/compile_simlib/riviera} {activehdl=D:/Codes/COD-course/Lab6/Lab6.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
+reset_run Font_ROM_synth_1
+set_property -dict [list CONFIG.depth {128}] [get_ips Font_ROM]
+generate_target all [get_files  D:/Codes/COD-course/Lab6/Lab6.srcs/sources_1/ip/Font_ROM/Font_ROM.xci]
+INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'Font_ROM'...
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'Font_ROM'...
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'Font_ROM'...
+INFO: [IP_Flow 19-1686] Generating 'Change Log' target for IP 'Font_ROM'...
+catch { config_ip_cache -export [get_ips -all Font_ROM] }
+export_ip_user_files -of_objects [get_files D:/Codes/COD-course/Lab6/Lab6.srcs/sources_1/ip/Font_ROM/Font_ROM.xci] -no_script -sync -force -quiet
+launch_runs -jobs 8 Font_ROM_synth_1
+[Fri May 31 17:13:33 2019] Launched Font_ROM_synth_1...
+Run output will be captured here: D:/Codes/COD-course/Lab6/Lab6.runs/Font_ROM_synth_1/runme.log
+export_simulation -of_objects [get_files D:/Codes/COD-course/Lab6/Lab6.srcs/sources_1/ip/Font_ROM/Font_ROM.xci] -directory D:/Codes/COD-course/Lab6/Lab6.ip_user_files/sim_scripts -ip_user_files_dir D:/Codes/COD-course/Lab6/Lab6.ip_user_files -ipstatic_source_dir D:/Codes/COD-course/Lab6/Lab6.ip_user_files/ipstatic -lib_map_path [list {modelsim=D:/Codes/COD-course/Lab6/Lab6.cache/compile_simlib/modelsim} {questa=D:/Codes/COD-course/Lab6/Lab6.cache/compile_simlib/questa} {riviera=D:/Codes/COD-course/Lab6/Lab6.cache/compile_simlib/riviera} {activehdl=D:/Codes/COD-course/Lab6/Lab6.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+[Fri May 31 17:14:55 2019] Launched synth_1...
+Run output will be captured here: D:/Codes/COD-course/Lab6/Lab6.runs/synth_1/runme.log
+[Fri May 31 17:14:55 2019] Launched impl_1...
+Run output will be captured here: D:/Codes/COD-course/Lab6/Lab6.runs/impl_1/runme.log
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+[Fri May 31 17:15:58 2019] Launched synth_1...
+Run output will be captured here: D:/Codes/COD-course/Lab6/Lab6.runs/synth_1/runme.log
+[Fri May 31 17:15:58 2019] Launched impl_1...
+Run output will be captured here: D:/Codes/COD-course/Lab6/Lab6.runs/impl_1/runme.log
+open_run impl_1
+INFO: [Netlist 29-17] Analyzing 1048 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2018.2
+INFO: [Device 21-403] Loading part xc7a100tcsg324-1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+WARNING: [Constraints 18-550] Could not create 'IBUF_LOW_PWR' constraint because net 'vga/cvt/CLK100MHZ' is not directly connected to top level port. Synthesis is ignored for d:/Codes/COD-course/Lab6/Lab6.srcs/sources_1/ip/CLK_CVT_100M_40M/CLK_CVT_100M_40M/CLK_CVT_100M_40M.edf but preserved for implementation. [d:/Codes/COD-course/Lab6/Lab6.srcs/sources_1/ip/CLK_CVT_100M_40M/CLK_CVT_100M_40M/CLK_CVT_100M_40M.edf:276]
+INFO: [Timing 38-478] Restoring timing data from binary archive.
+INFO: [Timing 38-479] Binary timing data restore complete.
+INFO: [Project 1-856] Restoring constraints from binary archive.
+INFO: [Project 1-853] Binary constraint restore complete.
+Reading XDEF placement.
+Reading placer database...
+Reading XDEF routing.
+Read XDEF File: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.765 . Memory (MB): peak = 2604.633 ; gain = 0.000
+Restored from archive | CPU: 1.000000 secs | Memory: 0.000000 MB |
+Finished XDEF File Restore: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.765 . Memory (MB): peak = 2604.633 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 384 instances were transformed.
+  RAM128X1D => RAM128X1D (RAMD64E, RAMD64E, MUXF7, MUXF7, RAMD64E, RAMD64E): 384 instances
+
+open_run: Time (s): cpu = 00:00:35 ; elapsed = 00:00:31 . Memory (MB): peak = 2683.184 ; gain = 930.484
+CRITICAL WARNING: [Timing 38-282] The design failed to meet the timing requirements. Please see the timing summary report for details on the timing violations.
+close_design
+open_hw
+connect_hw_server
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-2222] Launching hw_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+****** Xilinx hw_server v2018.2
+  **** Build date : Jun 14 2018-20:42:52
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+
+open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210292A8B50FA
+set_property PROGRAM.FILE {D:/Codes/COD-course/Lab6/Lab6.runs/impl_1/top.bit} [get_hw_devices xc7a100t_0]
+current_hw_device [get_hw_devices xc7a100t_0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a100t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a100t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [Labtools 27-3361] The debug hub core was not detected.
+Resolution: 
+1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active.
+2. Make sure the BSCAN_SWITCH_USER_MASK device property in Vivado Hardware Manager reflects the user scan chain setting in the design and refresh the device.  To determine the user scan chain setting in the design, open the implemented design and use 'get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub]'.
+For more details on setting the scan chain property, consult the Vivado Debug and Programming User Guide (UG908).
+set_property PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property PROGRAM.FILE {D:/Codes/COD-course/Lab6/Lab6.runs/impl_1/top.bit} [get_hw_devices xc7a100t_0]
+program_hw_devices [get_hw_devices xc7a100t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a100t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a100t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [Labtools 27-3361] The debug hub core was not detected.
+Resolution: 
+1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active.
+2. Make sure the BSCAN_SWITCH_USER_MASK device property in Vivado Hardware Manager reflects the user scan chain setting in the design and refresh the device.  To determine the user scan chain setting in the design, open the implemented design and use 'get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub]'.
+For more details on setting the scan chain property, consult the Vivado Debug and Programming User Guide (UG908).
+close_hw
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+[Fri May 31 18:34:15 2019] Launched synth_1...
+Run output will be captured here: D:/Codes/COD-course/Lab6/Lab6.runs/synth_1/runme.log
+[Fri May 31 18:34:15 2019] Launched impl_1...
+Run output will be captured here: D:/Codes/COD-course/Lab6/Lab6.runs/impl_1/runme.log
+reset_run impl_1
+set_property -dict [list CONFIG.coefficient_file {C:/Users/yjh10/Desktop/terminal.coe}] [get_ips RAM]
+generate_target all [get_files  D:/Codes/COD-course/Lab6/Lab6.srcs/sources_1/ip/RAM/RAM.xci]
+INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'RAM'...
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'RAM'...
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'RAM'...
+INFO: [IP_Flow 19-1686] Generating 'Change Log' target for IP 'RAM'...
+catch { config_ip_cache -export [get_ips -all RAM] }
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP RAM, cache-ID = fd94dabb390408d1; cache size = 19.105 MB.
+catch { [ delete_ip_run [get_ips -all RAM] ] }
+WARNING: [Vivado 12-1017] Problems encountered:
+1. Failed to delete one or more files in run directory D:/Codes/COD-course/Lab6/Lab6.runs/RAM_synth_1
+
+INFO: [Project 1-386] Moving file 'D:/Codes/COD-course/Lab6/Lab6.srcs/sources_1/ip/RAM/RAM.xci' from fileset 'RAM' to fileset 'sources_1'.
+export_ip_user_files -of_objects [get_files D:/Codes/COD-course/Lab6/Lab6.srcs/sources_1/ip/RAM/RAM.xci] -no_script -sync -force -quiet
+create_ip_run [get_files -of_objects [get_fileset sources_1] D:/Codes/COD-course/Lab6/Lab6.srcs/sources_1/ip/RAM/RAM.xci]
+INFO: [Vivado 12-3453] The given sub-design is up-to-date, no action was taken.  If a run is still desired, use the '-force' option for the file:'D:/Codes/COD-course/Lab6/Lab6.srcs/sources_1/ip/RAM/RAM.xci'
+export_simulation -of_objects [get_files D:/Codes/COD-course/Lab6/Lab6.srcs/sources_1/ip/RAM/RAM.xci] -directory D:/Codes/COD-course/Lab6/Lab6.ip_user_files/sim_scripts -ip_user_files_dir D:/Codes/COD-course/Lab6/Lab6.ip_user_files -ipstatic_source_dir D:/Codes/COD-course/Lab6/Lab6.ip_user_files/ipstatic -lib_map_path [list {modelsim=D:/Codes/COD-course/Lab6/Lab6.cache/compile_simlib/modelsim} {questa=D:/Codes/COD-course/Lab6/Lab6.cache/compile_simlib/questa} {riviera=D:/Codes/COD-course/Lab6/Lab6.cache/compile_simlib/riviera} {activehdl=D:/Codes/COD-course/Lab6/Lab6.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
+update_compile_order -fileset sources_1
+set_property -dict [list CONFIG.coefficient_file {C:/Users/yjh10/Desktop/font.coe}] [get_ips Font_ROM]
+generate_target all [get_files  D:/Codes/COD-course/Lab6/Lab6.srcs/sources_1/ip/Font_ROM/Font_ROM.xci]
+INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'Font_ROM'...
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'Font_ROM'...
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'Font_ROM'...
+INFO: [IP_Flow 19-1686] Generating 'Change Log' target for IP 'Font_ROM'...
+catch { config_ip_cache -export [get_ips -all Font_ROM] }
+export_ip_user_files -of_objects [get_files D:/Codes/COD-course/Lab6/Lab6.srcs/sources_1/ip/Font_ROM/Font_ROM.xci] -no_script -sync -force -quiet
+reset_run Font_ROM_synth_1
+launch_runs -jobs 8 Font_ROM_synth_1
+[Fri May 31 18:41:24 2019] Launched Font_ROM_synth_1...
+Run output will be captured here: D:/Codes/COD-course/Lab6/Lab6.runs/Font_ROM_synth_1/runme.log
+export_simulation -of_objects [get_files D:/Codes/COD-course/Lab6/Lab6.srcs/sources_1/ip/Font_ROM/Font_ROM.xci] -directory D:/Codes/COD-course/Lab6/Lab6.ip_user_files/sim_scripts -ip_user_files_dir D:/Codes/COD-course/Lab6/Lab6.ip_user_files -ipstatic_source_dir D:/Codes/COD-course/Lab6/Lab6.ip_user_files/ipstatic -lib_map_path [list {modelsim=D:/Codes/COD-course/Lab6/Lab6.cache/compile_simlib/modelsim} {questa=D:/Codes/COD-course/Lab6/Lab6.cache/compile_simlib/questa} {riviera=D:/Codes/COD-course/Lab6/Lab6.cache/compile_simlib/riviera} {activehdl=D:/Codes/COD-course/Lab6/Lab6.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
+reset_run synth_1
+WARNING: [Vivado 12-1017] Problems encountered:
+1. Failed to delete one or more files in run directory D:/Codes/COD-course/Lab6/Lab6.runs/synth_1
+
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+INFO: [Vivado 12-4149] The synthesis checkpoint for IP 'D:/Codes/COD-course/Lab6/Lab6.srcs/sources_1/ip/RAM/RAM.xci' is already up-to-date
+[Fri May 31 18:41:52 2019] Launched Font_ROM_synth_1, synth_1...
+Run output will be captured here:
+Font_ROM_synth_1: D:/Codes/COD-course/Lab6/Lab6.runs/Font_ROM_synth_1/runme.log
+synth_1: D:/Codes/COD-course/Lab6/Lab6.runs/synth_1/runme.log
+[Fri May 31 18:41:52 2019] Launched impl_1...
+Run output will be captured here: D:/Codes/COD-course/Lab6/Lab6.runs/impl_1/runme.log
+open_hw
+connect_hw_server
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-2222] Launching hw_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+****** Xilinx hw_server v2018.2
+  **** Build date : Jun 14 2018-20:42:52
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+
+open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210292A8B50FA
+set_property PROGRAM.FILE {D:/Codes/COD-course/Lab6/Lab6.runs/impl_1/top.bit} [get_hw_devices xc7a100t_0]
+current_hw_device [get_hw_devices xc7a100t_0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a100t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a100t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [Labtools 27-3361] The debug hub core was not detected.
+Resolution: 
+1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active.
+2. Make sure the BSCAN_SWITCH_USER_MASK device property in Vivado Hardware Manager reflects the user scan chain setting in the design and refresh the device.  To determine the user scan chain setting in the design, open the implemented design and use 'get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub]'.
+For more details on setting the scan chain property, consult the Vivado Debug and Programming User Guide (UG908).
+set_property PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property PROGRAM.FILE {D:/Codes/COD-course/Lab6/Lab6.runs/impl_1/top.bit} [get_hw_devices xc7a100t_0]
+program_hw_devices [get_hw_devices xc7a100t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a100t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a100t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [Labtools 27-3361] The debug hub core was not detected.
+Resolution: 
+1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active.
+2. Make sure the BSCAN_SWITCH_USER_MASK device property in Vivado Hardware Manager reflects the user scan chain setting in the design and refresh the device.  To determine the user scan chain setting in the design, open the implemented design and use 'get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub]'.
+For more details on setting the scan chain property, consult the Vivado Debug and Programming User Guide (UG908).
+close_hw
+export_ip_user_files -of_objects  [get_files D:/Codes/COD-course/Lab6/Lab6.srcs/sources_1/ip/Font_ROM/Font_ROM.xci] -no_script -reset -force -quiet
+remove_files  -fileset Font_ROM D:/Codes/COD-course/Lab6/Lab6.srcs/sources_1/ip/Font_ROM/Font_ROM.xci
+INFO: [Project 1-386] Moving file 'D:/Codes/COD-course/Lab6/Lab6.srcs/sources_1/ip/Font_ROM/Font_ROM.xci' from fileset 'Font_ROM' to fileset 'sources_1'.
+WARNING: [IP_Flow 19-4067] Ignoring invalid widget type specified checkbox.Providing a default widget
+WARNING: [IP_Flow 19-4067] Ignoring invalid widget type specified checkbox.Providing a default widget
+open_project D:/Codes/COD-course/Lab4/Lab4.xpr
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/Xilinx/Vivado/2018.2/data/ip'.
+update_compile_order -fileset sources_1
+WARNING: [IP_Flow 19-4067] Ignoring invalid widget type specified checkbox.Providing a default widget
+WARNING: [IP_Flow 19-4067] Ignoring invalid widget type specified checkbox.Providing a default widget
+close_project
+WARNING: [IP_Flow 19-4067] Ignoring invalid widget type specified checkbox.Providing a default widget
+WARNING: [IP_Flow 19-4067] Ignoring invalid widget type specified checkbox.Providing a default widget
+create_ip -name blk_mem_gen -vendor xilinx.com -library ip -version 8.4 -module_name Font_ROM -dir d:/Codes/COD-course/Lab6/Lab6.srcs/sources_1/ip
+set_property -dict [list CONFIG.Component_Name {Font_ROM} CONFIG.Memory_Type {Single_Port_ROM} CONFIG.Write_Width_A {250} CONFIG.Write_Depth_A {128} CONFIG.Read_Width_A {250} CONFIG.Write_Width_B {250} CONFIG.Read_Width_B {250} CONFIG.Load_Init_File {true} CONFIG.Coe_File {C:/Users/yjh10/Desktop/font.coe} CONFIG.Port_A_Write_Rate {0}] [get_ips Font_ROM]
+WARNING: [Vivado 12-3523] Attempt to change 'Component_Name' from 'Font_ROM' to 'Font_ROM' is not allowed and is ignored.
+generate_target {instantiation_template} [get_files d:/Codes/COD-course/Lab6/Lab6.srcs/sources_1/ip/Font_ROM_1/Font_ROM.xci]
+INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'Font_ROM'...
+update_compile_order -fileset sources_1
+generate_target all [get_files  d:/Codes/COD-course/Lab6/Lab6.srcs/sources_1/ip/Font_ROM_1/Font_ROM.xci]
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'Font_ROM'...
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'Font_ROM'...
+INFO: [IP_Flow 19-1686] Generating 'Miscellaneous' target for IP 'Font_ROM'...
+INFO: [IP_Flow 19-1686] Generating 'Change Log' target for IP 'Font_ROM'...
+catch { config_ip_cache -export [get_ips -all Font_ROM] }
+export_ip_user_files -of_objects [get_files d:/Codes/COD-course/Lab6/Lab6.srcs/sources_1/ip/Font_ROM_1/Font_ROM.xci] -no_script -sync -force -quiet
+create_ip_run [get_files -of_objects [get_fileset sources_1] d:/Codes/COD-course/Lab6/Lab6.srcs/sources_1/ip/Font_ROM_1/Font_ROM.xci]
+launch_runs -jobs 8 Font_ROM_synth_1
+[Fri May 31 19:00:50 2019] Launched Font_ROM_synth_1...
+Run output will be captured here: D:/Codes/COD-course/Lab6/Lab6.runs/Font_ROM_synth_1/runme.log
+export_simulation -of_objects [get_files d:/Codes/COD-course/Lab6/Lab6.srcs/sources_1/ip/Font_ROM_1/Font_ROM.xci] -directory D:/Codes/COD-course/Lab6/Lab6.ip_user_files/sim_scripts -ip_user_files_dir D:/Codes/COD-course/Lab6/Lab6.ip_user_files -ipstatic_source_dir D:/Codes/COD-course/Lab6/Lab6.ip_user_files/ipstatic -lib_map_path [list {modelsim=D:/Codes/COD-course/Lab6/Lab6.cache/compile_simlib/modelsim} {questa=D:/Codes/COD-course/Lab6/Lab6.cache/compile_simlib/questa} {riviera=D:/Codes/COD-course/Lab6/Lab6.cache/compile_simlib/riviera} {activehdl=D:/Codes/COD-course/Lab6/Lab6.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+INFO: [Vivado 12-4149] The synthesis checkpoint for IP 'D:/Codes/COD-course/Lab6/Lab6.srcs/sources_1/ip/RAM/RAM.xci' is already up-to-date
+[Fri May 31 19:03:06 2019] Launched synth_1...
+Run output will be captured here: D:/Codes/COD-course/Lab6/Lab6.runs/synth_1/runme.log
+[Fri May 31 19:03:06 2019] Launched impl_1...
+Run output will be captured here: D:/Codes/COD-course/Lab6/Lab6.runs/impl_1/runme.log
+reset_run impl_1
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+INFO: [Vivado 12-4149] The synthesis checkpoint for IP 'D:/Codes/COD-course/Lab6/Lab6.srcs/sources_1/ip/RAM/RAM.xci' is already up-to-date
+[Fri May 31 19:05:48 2019] Launched synth_1...
+Run output will be captured here: D:/Codes/COD-course/Lab6/Lab6.runs/synth_1/runme.log
+[Fri May 31 19:05:48 2019] Launched impl_1...
+Run output will be captured here: D:/Codes/COD-course/Lab6/Lab6.runs/impl_1/runme.log
+open_hw
+connect_hw_server
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-2222] Launching hw_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+****** Xilinx hw_server v2018.2
+  **** Build date : Jun 14 2018-20:42:52
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+
+connect_hw_server: Time (s): cpu = 00:00:00 ; elapsed = 00:00:07 . Memory (MB): peak = 2727.547 ; gain = 0.000
+open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210292A8B50FA
+set_property PROGRAM.FILE {D:/Codes/COD-course/Lab6/Lab6.runs/impl_1/top.bit} [get_hw_devices xc7a100t_0]
+current_hw_device [get_hw_devices xc7a100t_0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a100t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a100t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [Labtools 27-3361] The debug hub core was not detected.
+Resolution: 
+1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active.
+2. Make sure the BSCAN_SWITCH_USER_MASK device property in Vivado Hardware Manager reflects the user scan chain setting in the design and refresh the device.  To determine the user scan chain setting in the design, open the implemented design and use 'get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub]'.
+For more details on setting the scan chain property, consult the Vivado Debug and Programming User Guide (UG908).
+set_property PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property PROGRAM.FILE {D:/Codes/COD-course/Lab6/Lab6.runs/impl_1/top.bit} [get_hw_devices xc7a100t_0]
+program_hw_devices [get_hw_devices xc7a100t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a100t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a100t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [Labtools 27-3361] The debug hub core was not detected.
+Resolution: 
+1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active.
+2. Make sure the BSCAN_SWITCH_USER_MASK device property in Vivado Hardware Manager reflects the user scan chain setting in the design and refresh the device.  To determine the user scan chain setting in the design, open the implemented design and use 'get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub]'.
+For more details on setting the scan chain property, consult the Vivado Debug and Programming User Guide (UG908).
+close_hw
+WARNING: [IP_Flow 19-4067] Ignoring invalid widget type specified checkbox.Providing a default widget
+WARNING: [IP_Flow 19-4067] Ignoring invalid widget type specified checkbox.Providing a default widget
+set_property -dict [list CONFIG.Register_PortA_Output_of_Memory_Primitives {false}] [get_ips Font_ROM]
+generate_target all [get_files  d:/Codes/COD-course/Lab6/Lab6.srcs/sources_1/ip/Font_ROM_1/Font_ROM.xci]
+INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'Font_ROM'...
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'Font_ROM'...
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'Font_ROM'...
+INFO: [IP_Flow 19-1686] Generating 'Miscellaneous' target for IP 'Font_ROM'...
+INFO: [IP_Flow 19-1686] Generating 'Change Log' target for IP 'Font_ROM'...
+catch { config_ip_cache -export [get_ips -all Font_ROM] }
+export_ip_user_files -of_objects [get_files d:/Codes/COD-course/Lab6/Lab6.srcs/sources_1/ip/Font_ROM_1/Font_ROM.xci] -no_script -sync -force -quiet
+reset_run Font_ROM_synth_1
+launch_runs -jobs 8 Font_ROM_synth_1
+[Fri May 31 19:20:51 2019] Launched Font_ROM_synth_1...
+Run output will be captured here: D:/Codes/COD-course/Lab6/Lab6.runs/Font_ROM_synth_1/runme.log
+export_simulation -of_objects [get_files d:/Codes/COD-course/Lab6/Lab6.srcs/sources_1/ip/Font_ROM_1/Font_ROM.xci] -directory D:/Codes/COD-course/Lab6/Lab6.ip_user_files/sim_scripts -ip_user_files_dir D:/Codes/COD-course/Lab6/Lab6.ip_user_files -ipstatic_source_dir D:/Codes/COD-course/Lab6/Lab6.ip_user_files/ipstatic -lib_map_path [list {modelsim=D:/Codes/COD-course/Lab6/Lab6.cache/compile_simlib/modelsim} {questa=D:/Codes/COD-course/Lab6/Lab6.cache/compile_simlib/questa} {riviera=D:/Codes/COD-course/Lab6/Lab6.cache/compile_simlib/riviera} {activehdl=D:/Codes/COD-course/Lab6/Lab6.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
+WARNING: [IP_Flow 19-4067] Ignoring invalid widget type specified checkbox.Providing a default widget
+WARNING: [IP_Flow 19-4067] Ignoring invalid widget type specified checkbox.Providing a default widget
+set_property -dict [list CONFIG.Enable_A {Always_Enabled} CONFIG.Register_PortA_Output_of_Memory_Primitives {true}] [get_ips Font_ROM]
+generate_target all [get_files  d:/Codes/COD-course/Lab6/Lab6.srcs/sources_1/ip/Font_ROM_1/Font_ROM.xci]
+INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'Font_ROM'...
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'Font_ROM'...
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'Font_ROM'...
+INFO: [IP_Flow 19-1686] Generating 'Miscellaneous' target for IP 'Font_ROM'...
+INFO: [IP_Flow 19-1686] Generating 'Change Log' target for IP 'Font_ROM'...
+catch { config_ip_cache -export [get_ips -all Font_ROM] }
+export_ip_user_files -of_objects [get_files d:/Codes/COD-course/Lab6/Lab6.srcs/sources_1/ip/Font_ROM_1/Font_ROM.xci] -no_script -sync -force -quiet
+reset_run Font_ROM_synth_1
+launch_runs -jobs 8 Font_ROM_synth_1
+[Fri May 31 19:24:28 2019] Launched Font_ROM_synth_1...
+Run output will be captured here: D:/Codes/COD-course/Lab6/Lab6.runs/Font_ROM_synth_1/runme.log
+export_simulation -of_objects [get_files d:/Codes/COD-course/Lab6/Lab6.srcs/sources_1/ip/Font_ROM_1/Font_ROM.xci] -directory D:/Codes/COD-course/Lab6/Lab6.ip_user_files/sim_scripts -ip_user_files_dir D:/Codes/COD-course/Lab6/Lab6.ip_user_files -ipstatic_source_dir D:/Codes/COD-course/Lab6/Lab6.ip_user_files/ipstatic -lib_map_path [list {modelsim=D:/Codes/COD-course/Lab6/Lab6.cache/compile_simlib/modelsim} {questa=D:/Codes/COD-course/Lab6/Lab6.cache/compile_simlib/questa} {riviera=D:/Codes/COD-course/Lab6/Lab6.cache/compile_simlib/riviera} {activehdl=D:/Codes/COD-course/Lab6/Lab6.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
+WARNING: [IP_Flow 19-4067] Ignoring invalid widget type specified checkbox.Providing a default widget
+WARNING: [IP_Flow 19-4067] Ignoring invalid widget type specified checkbox.Providing a default widget
+reset_run synth_1
+WARNING: [Vivado 12-1017] Problems encountered:
+1. Failed to delete one or more files in run directory D:/Codes/COD-course/Lab6/Lab6.runs/synth_1
+
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+INFO: [Vivado 12-4149] The synthesis checkpoint for IP 'D:/Codes/COD-course/Lab6/Lab6.srcs/sources_1/ip/RAM/RAM.xci' is already up-to-date
+[Fri May 31 19:25:09 2019] Launched Font_ROM_synth_1, synth_1...
+Run output will be captured here:
+Font_ROM_synth_1: D:/Codes/COD-course/Lab6/Lab6.runs/Font_ROM_synth_1/runme.log
+synth_1: D:/Codes/COD-course/Lab6/Lab6.runs/synth_1/runme.log
+[Fri May 31 19:25:09 2019] Launched impl_1...
+Run output will be captured here: D:/Codes/COD-course/Lab6/Lab6.runs/impl_1/runme.log
+open_hw
+connect_hw_server
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-2222] Launching hw_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+****** Xilinx hw_server v2018.2
+  **** Build date : Jun 14 2018-20:42:52
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+
+open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210292A8B50FA
+set_property PROGRAM.FILE {D:/Codes/COD-course/Lab6/Lab6.runs/impl_1/top.bit} [get_hw_devices xc7a100t_0]
+current_hw_device [get_hw_devices xc7a100t_0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a100t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a100t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [Labtools 27-3361] The debug hub core was not detected.
+Resolution: 
+1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active.
+2. Make sure the BSCAN_SWITCH_USER_MASK device property in Vivado Hardware Manager reflects the user scan chain setting in the design and refresh the device.  To determine the user scan chain setting in the design, open the implemented design and use 'get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub]'.
+For more details on setting the scan chain property, consult the Vivado Debug and Programming User Guide (UG908).
+set_property PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property PROGRAM.FILE {D:/Codes/COD-course/Lab6/Lab6.runs/impl_1/top.bit} [get_hw_devices xc7a100t_0]
+program_hw_devices [get_hw_devices xc7a100t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a100t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a100t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [Labtools 27-3361] The debug hub core was not detected.
+Resolution: 
+1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active.
+2. Make sure the BSCAN_SWITCH_USER_MASK device property in Vivado Hardware Manager reflects the user scan chain setting in the design and refresh the device.  To determine the user scan chain setting in the design, open the implemented design and use 'get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub]'.
+For more details on setting the scan chain property, consult the Vivado Debug and Programming User Guide (UG908).
+close_hw
+WARNING: [IP_Flow 19-4067] Ignoring invalid widget type specified checkbox.Providing a default widget
+WARNING: [IP_Flow 19-4067] Ignoring invalid widget type specified checkbox.Providing a default widget
+export_ip_user_files -of_objects  [get_files d:/Codes/COD-course/Lab6/Lab6.srcs/sources_1/ip/Font_ROM_1/Font_ROM.xci] -no_script -reset -force -quiet
+remove_files  -fileset Font_ROM d:/Codes/COD-course/Lab6/Lab6.srcs/sources_1/ip/Font_ROM_1/Font_ROM.xci
+INFO: [Project 1-386] Moving file 'd:/Codes/COD-course/Lab6/Lab6.srcs/sources_1/ip/Font_ROM_1/Font_ROM.xci' from fileset 'Font_ROM' to fileset 'sources_1'.
+create_ip -name dist_mem_gen -vendor xilinx.com -library ip -version 8.0 -module_name dist_mem_gen_0 -dir d:/Codes/COD-course/Lab6/Lab6.srcs/sources_1/ip
+set_property -dict [list CONFIG.depth {128} CONFIG.data_width {250} CONFIG.memory_type {rom} CONFIG.coefficient_file {C:/Users/yjh10/Desktop/font.coe}] [get_ips dist_mem_gen_0]
+generate_target {instantiation_template} [get_files d:/Codes/COD-course/Lab6/Lab6.srcs/sources_1/ip/dist_mem_gen_0/dist_mem_gen_0.xci]
+INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'dist_mem_gen_0'...
+generate_target all [get_files  d:/Codes/COD-course/Lab6/Lab6.srcs/sources_1/ip/dist_mem_gen_0/dist_mem_gen_0.xci]
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'dist_mem_gen_0'...
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'dist_mem_gen_0'...
+INFO: [IP_Flow 19-1686] Generating 'Change Log' target for IP 'dist_mem_gen_0'...
+catch { config_ip_cache -export [get_ips -all dist_mem_gen_0] }
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP dist_mem_gen_0, cache-ID = 0edc86196d19f6ae; cache size = 20.518 MB.
+export_ip_user_files -of_objects [get_files d:/Codes/COD-course/Lab6/Lab6.srcs/sources_1/ip/dist_mem_gen_0/dist_mem_gen_0.xci] -no_script -sync -force -quiet
+create_ip_run [get_files -of_objects [get_fileset sources_1] d:/Codes/COD-course/Lab6/Lab6.srcs/sources_1/ip/dist_mem_gen_0/dist_mem_gen_0.xci]
+INFO: [Vivado 12-3453] The given sub-design is up-to-date, no action was taken.  If a run is still desired, use the '-force' option for the file:'d:/Codes/COD-course/Lab6/Lab6.srcs/sources_1/ip/dist_mem_gen_0/dist_mem_gen_0.xci'
+export_simulation -of_objects [get_files d:/Codes/COD-course/Lab6/Lab6.srcs/sources_1/ip/dist_mem_gen_0/dist_mem_gen_0.xci] -directory D:/Codes/COD-course/Lab6/Lab6.ip_user_files/sim_scripts -ip_user_files_dir D:/Codes/COD-course/Lab6/Lab6.ip_user_files -ipstatic_source_dir D:/Codes/COD-course/Lab6/Lab6.ip_user_files/ipstatic -lib_map_path [list {modelsim=D:/Codes/COD-course/Lab6/Lab6.cache/compile_simlib/modelsim} {questa=D:/Codes/COD-course/Lab6/Lab6.cache/compile_simlib/questa} {riviera=D:/Codes/COD-course/Lab6/Lab6.cache/compile_simlib/riviera} {activehdl=D:/Codes/COD-course/Lab6/Lab6.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
+update_compile_order -fileset sources_1
+export_ip_user_files -of_objects  [get_files d:/Codes/COD-course/Lab6/Lab6.srcs/sources_1/ip/dist_mem_gen_0/dist_mem_gen_0.xci] -no_script -reset -force -quiet
+remove_files  d:/Codes/COD-course/Lab6/Lab6.srcs/sources_1/ip/dist_mem_gen_0/dist_mem_gen_0.xci
+create_ip -name dist_mem_gen -vendor xilinx.com -library ip -version 8.0 -module_name dist_mem_gen_0 -dir d:/Codes/COD-course/Lab6/Lab6.srcs/sources_1/ip
+set_property -dict [list CONFIG.depth {128} CONFIG.data_width {250} CONFIG.memory_type {rom} CONFIG.coefficient_file {C:/Users/yjh10/Desktop/font.coe}] [get_ips dist_mem_gen_0]
+generate_target {instantiation_template} [get_files d:/Codes/COD-course/Lab6/Lab6.srcs/sources_1/ip/dist_mem_gen_0_1/dist_mem_gen_0.xci]
+INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'dist_mem_gen_0'...
+generate_target all [get_files  d:/Codes/COD-course/Lab6/Lab6.srcs/sources_1/ip/dist_mem_gen_0_1/dist_mem_gen_0.xci]
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'dist_mem_gen_0'...
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'dist_mem_gen_0'...
+INFO: [IP_Flow 19-1686] Generating 'Change Log' target for IP 'dist_mem_gen_0'...
+catch { config_ip_cache -export [get_ips -all dist_mem_gen_0] }
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP dist_mem_gen_0, cache-ID = 0edc86196d19f6ae; cache size = 20.518 MB.
+export_ip_user_files -of_objects [get_files d:/Codes/COD-course/Lab6/Lab6.srcs/sources_1/ip/dist_mem_gen_0_1/dist_mem_gen_0.xci] -no_script -sync -force -quiet
+create_ip_run [get_files -of_objects [get_fileset sources_1] d:/Codes/COD-course/Lab6/Lab6.srcs/sources_1/ip/dist_mem_gen_0_1/dist_mem_gen_0.xci]
+INFO: [Vivado 12-3453] The given sub-design is up-to-date, no action was taken.  If a run is still desired, use the '-force' option for the file:'d:/Codes/COD-course/Lab6/Lab6.srcs/sources_1/ip/dist_mem_gen_0_1/dist_mem_gen_0.xci'
+export_simulation -of_objects [get_files d:/Codes/COD-course/Lab6/Lab6.srcs/sources_1/ip/dist_mem_gen_0_1/dist_mem_gen_0.xci] -directory D:/Codes/COD-course/Lab6/Lab6.ip_user_files/sim_scripts -ip_user_files_dir D:/Codes/COD-course/Lab6/Lab6.ip_user_files -ipstatic_source_dir D:/Codes/COD-course/Lab6/Lab6.ip_user_files/ipstatic -lib_map_path [list {modelsim=D:/Codes/COD-course/Lab6/Lab6.cache/compile_simlib/modelsim} {questa=D:/Codes/COD-course/Lab6/Lab6.cache/compile_simlib/questa} {riviera=D:/Codes/COD-course/Lab6/Lab6.cache/compile_simlib/riviera} {activehdl=D:/Codes/COD-course/Lab6/Lab6.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
+update_compile_order -fileset sources_1
+export_ip_user_files -of_objects  [get_files d:/Codes/COD-course/Lab6/Lab6.srcs/sources_1/ip/dist_mem_gen_0_1/dist_mem_gen_0.xci] -no_script -reset -force -quiet
+remove_files  d:/Codes/COD-course/Lab6/Lab6.srcs/sources_1/ip/dist_mem_gen_0_1/dist_mem_gen_0.xci
+create_ip -name dist_mem_gen -vendor xilinx.com -library ip -version 8.0 -module_name Font_ROM -dir d:/Codes/COD-course/Lab6/Lab6.srcs/sources_1/ip
+set_property -dict [list CONFIG.depth {128} CONFIG.data_width {250} CONFIG.Component_Name {Font_ROM} CONFIG.memory_type {rom} CONFIG.coefficient_file {C:/Users/yjh10/Desktop/font.coe}] [get_ips Font_ROM]
+WARNING: [Vivado 12-3523] Attempt to change 'Component_Name' from 'Font_ROM' to 'Font_ROM' is not allowed and is ignored.
+generate_target {instantiation_template} [get_files d:/Codes/COD-course/Lab6/Lab6.srcs/sources_1/ip/Font_ROM_2/Font_ROM.xci]
+INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'Font_ROM'...
+generate_target all [get_files  d:/Codes/COD-course/Lab6/Lab6.srcs/sources_1/ip/Font_ROM_2/Font_ROM.xci]
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'Font_ROM'...
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'Font_ROM'...
+INFO: [IP_Flow 19-1686] Generating 'Change Log' target for IP 'Font_ROM'...
+catch { config_ip_cache -export [get_ips -all Font_ROM] }
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP Font_ROM, cache-ID = 0edc86196d19f6ae; cache size = 20.518 MB.
+export_ip_user_files -of_objects [get_files d:/Codes/COD-course/Lab6/Lab6.srcs/sources_1/ip/Font_ROM_2/Font_ROM.xci] -no_script -sync -force -quiet
+create_ip_run [get_files -of_objects [get_fileset sources_1] d:/Codes/COD-course/Lab6/Lab6.srcs/sources_1/ip/Font_ROM_2/Font_ROM.xci]
+INFO: [Vivado 12-3453] The given sub-design is up-to-date, no action was taken.  If a run is still desired, use the '-force' option for the file:'d:/Codes/COD-course/Lab6/Lab6.srcs/sources_1/ip/Font_ROM_2/Font_ROM.xci'
+export_simulation -of_objects [get_files d:/Codes/COD-course/Lab6/Lab6.srcs/sources_1/ip/Font_ROM_2/Font_ROM.xci] -directory D:/Codes/COD-course/Lab6/Lab6.ip_user_files/sim_scripts -ip_user_files_dir D:/Codes/COD-course/Lab6/Lab6.ip_user_files -ipstatic_source_dir D:/Codes/COD-course/Lab6/Lab6.ip_user_files/ipstatic -lib_map_path [list {modelsim=D:/Codes/COD-course/Lab6/Lab6.cache/compile_simlib/modelsim} {questa=D:/Codes/COD-course/Lab6/Lab6.cache/compile_simlib/questa} {riviera=D:/Codes/COD-course/Lab6/Lab6.cache/compile_simlib/riviera} {activehdl=D:/Codes/COD-course/Lab6/Lab6.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+INFO: [Vivado 12-4149] The synthesis checkpoint for IP 'd:/Codes/COD-course/Lab6/Lab6.srcs/sources_1/ip/Font_ROM_2/Font_ROM.xci' is already up-to-date
+INFO: [Vivado 12-4149] The synthesis checkpoint for IP 'D:/Codes/COD-course/Lab6/Lab6.srcs/sources_1/ip/RAM/RAM.xci' is already up-to-date
+[Fri May 31 19:38:30 2019] Launched synth_1...
+Run output will be captured here: D:/Codes/COD-course/Lab6/Lab6.runs/synth_1/runme.log
+[Fri May 31 19:38:30 2019] Launched impl_1...
+Run output will be captured here: D:/Codes/COD-course/Lab6/Lab6.runs/impl_1/runme.log
+reset_run impl_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+INFO: [Vivado 12-4149] The synthesis checkpoint for IP 'd:/Codes/COD-course/Lab6/Lab6.srcs/sources_1/ip/Font_ROM_2/Font_ROM.xci' is already up-to-date
+INFO: [Vivado 12-4149] The synthesis checkpoint for IP 'D:/Codes/COD-course/Lab6/Lab6.srcs/sources_1/ip/RAM/RAM.xci' is already up-to-date
+[Fri May 31 19:40:13 2019] Launched impl_1...
+Run output will be captured here: D:/Codes/COD-course/Lab6/Lab6.runs/impl_1/runme.log
+open_hw
+connect_hw_server
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-2222] Launching hw_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+****** Xilinx hw_server v2018.2
+  **** Build date : Jun 14 2018-20:42:52
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+
+open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210292A8B50FA
+set_property PROGRAM.FILE {D:/Codes/COD-course/Lab6/Lab6.runs/impl_1/top.bit} [get_hw_devices xc7a100t_0]
+current_hw_device [get_hw_devices xc7a100t_0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a100t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a100t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [Labtools 27-3361] The debug hub core was not detected.
+Resolution: 
+1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active.
+2. Make sure the BSCAN_SWITCH_USER_MASK device property in Vivado Hardware Manager reflects the user scan chain setting in the design and refresh the device.  To determine the user scan chain setting in the design, open the implemented design and use 'get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub]'.
+For more details on setting the scan chain property, consult the Vivado Debug and Programming User Guide (UG908).
+set_property PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property PROGRAM.FILE {D:/Codes/COD-course/Lab6/Lab6.runs/impl_1/top.bit} [get_hw_devices xc7a100t_0]
+program_hw_devices [get_hw_devices xc7a100t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a100t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a100t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [Labtools 27-3361] The debug hub core was not detected.
+Resolution: 
+1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active.
+2. Make sure the BSCAN_SWITCH_USER_MASK device property in Vivado Hardware Manager reflects the user scan chain setting in the design and refresh the device.  To determine the user scan chain setting in the design, open the implemented design and use 'get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub]'.
+For more details on setting the scan chain property, consult the Vivado Debug and Programming User Guide (UG908).
+close_hw
+export_ip_user_files -of_objects  [get_files c:/Users/yjh10/Desktop/inst_rom.coe] -no_script -reset -force -quiet
+remove_files  c:/Users/yjh10/Desktop/inst_rom.coe
+export_ip_user_files -of_objects  [get_files c:/Users/yjh10/Desktop/test_new.coe] -no_script -reset -force -quiet
+remove_files  c:/Users/yjh10/Desktop/test_new.coe
+export_ip_user_files -of_objects  [get_files c:/Users/yjh10/Desktop/test.coe] -no_script -reset -force -quiet
+remove_files  c:/Users/yjh10/Desktop/test.coe
+exit
+INFO: [Common 17-206] Exiting Vivado at Fri May 31 20:11:58 2019...
